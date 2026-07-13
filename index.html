@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎂</title>
+    
+    <!-- ==========================================================================
+       Favicon & Link Preview Logo (Open Graph)
+       ========================================================================== -->
+    <!-- Browser Tab Icon -->
+    <link rel="icon" type="image/jpeg" href="2.jpg">
+    
+    <!-- WhatsApp, iMessage, Messenger Preview Image -->
+    <meta property="og:title" content="Happy Birthday! 🎂">
+    <meta property="og:description" content="Volume 2026 • A Collection of Moments">
+    <meta property="og:image" content="2.jpg">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Homemade+Apple&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. Base Styling & Background Texture
+           ========================================================================== */
+        body {
+            background-color: #f4ebd9; /* Warm, aged paper background */
+            background-image: url('https://www.transparenttextures.com/patterns/lined-paper-2.png'); 
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevents unwanted horizontal scrolling from large tilted items */
+        }
+
+        /* ==========================================================================
+           2. Fonts & Typography
+           ========================================================================== */
+        .script-font {
+            font-family: 'Homemade Apple', cursive;
+            color: #4a3728;
+        }
+
+        .typewriter-font {
+            font-family: 'Special Elite', monospace;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           3. Layer 1: Scattered Background Collage (Opaque & Large)
+           ========================================================================== */
+        .journal-background-collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none; /* Allows user to click things on top of background */
+            z-index: 1; /* Sits behind main text container */
+        }
+
+        /* Base style for background ephemera */
+        .bg-scrap {
+            position: absolute;
+            opacity: 0.75; /* Solid presence for a realistic layered look */
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.15)); /* Realistic depth shadow */
+            height: auto;
+        }
+
+        /* 35 Unique Positioning classes with solid visibility and larger scaling */
+        /* Row 1 (0-10%) */
+        .pos-1  { top: 2%;  left: 2%;   transform: rotate(15deg);  max-width: 180px; }
+        .pos-2  { top: 5%;  left: 40%;  transform: rotate(-10deg); max-width: 220px; opacity: 0.45; } 
+        .pos-3  { top: 3%;  right: 2%;  transform: rotate(25deg);  max-width: 160px; }
+
+        /* Row 2 (10-20%) */
+        .pos-4  { top: 11%; left: 10%;  transform: rotate(-20deg); max-width: 240px; }
+        .pos-5  { top: 16%; left: 30%;  transform: rotate(5deg);   max-width: 280px; opacity: 0.45; }
+        .pos-6  { top: 12%; right: 12%; transform: rotate(-35deg); max-width: 200px; }
+        .pos-7  { top: 18%; right: 1%;  transform: rotate(10deg);  max-width: 210px; }
+
+        /* Row 3 (20-30%) */
+        .pos-8  { top: 22%; left: 1%;   transform: rotate(30deg);  max-width: 150px; }
+        .pos-9  { top: 26%; left: 20%;  transform: rotate(-5deg);  max-width: 320px; opacity: 0.45; }
+        .pos-10 { top: 21%; right: 8%;  transform: rotate(15deg);  max-width: 250px; }
+        .pos-11 { top: 28%; right: 30%; transform: rotate(-15deg); max-width: 190px; }
+
+        /* Row 4 (30-40%) */
+        .pos-12 { top: 32%; left: 5%;   transform: rotate(-10deg); max-width: 230px; }
+        .pos-13 { top: 38%; left: 35%;  transform: rotate(20deg);  max-width: 210px; opacity: 0.5; }
+        .pos-14 { top: 31%; right: 3%;  transform: rotate(50deg);  max-width: 140px; }
+        .pos-15 { top: 36%; right: 20%; transform: rotate(-30deg); max-width: 260px; }
+
+        /* Row 5 (40-50%) */
+        .pos-16 { top: 41%; left: 15%;  transform: rotate(15deg);  max-width: 300px; }
+        .pos-17 { top: 46%; left: 45%;  transform: rotate(-5deg);  max-width: 270px; opacity: 0.45; }
+        .pos-18 { top: 43%; right: 5%;  transform: rotate(-25deg); max-width: 210px; }
+
+        /* Row 6 (50-60%) */
+        .pos-19 { top: 52%; left: 2%;   transform: rotate(10deg);  max-width: 220px; }
+        .pos-20 { top: 58%; left: 20%;  transform: rotate(-15deg); max-width: 180px; opacity: 0.5; }
+        .pos-21 { top: 51%; right: 14%; transform: rotate(35deg);  max-width: 250px; }
+        .pos-22 { top: 56%; right: 1%;  transform: rotate(-20deg); max-width: 290px; }
+
+        /* Row 7 (60-70%) */
+        .pos-23 { top: 62%; left: 10%;  transform: rotate(25deg);  max-width: 200px; }
+        .pos-24 { top: 68%; left: 35%;  transform: rotate(5deg);   max-width: 340px; opacity: 0.45; }
+        .pos-25 { top: 63%; right: 4%;  transform: rotate(-10deg); max-width: 230px; }
+        .pos-26 { top: 67%; right: 25%; transform: rotate(15deg);  max-width: 160px; }
+
+        /* Row 8 (70-80%) */
+        .pos-27 { top: 71%; left: 2%;   transform: rotate(-30deg); max-width: 240px; }
+        .pos-28 { top: 76%; left: 15%;  transform: rotate(5deg);   max-width: 280px; opacity: 0.5; }
+        .pos-29 { top: 72%; right: 10%; transform: rotate(20deg);  max-width: 210px; }
+        .pos-30 { top: 79%; right: 1%;  transform: rotate(-15deg); max-width: 150px; }
+
+        /* Row 9 (80-90%) */
+        .pos-31 { top: 82%; left: 5%;   transform: rotate(10deg);  max-width: 190px; }
+        .pos-32 { top: 88%; left: 30%;  transform: rotate(-5deg);  max-width: 310px; opacity: 0.45; }
+        .pos-33 { top: 81%; right: 8%;  transform: rotate(25deg);  max-width: 230px; }
+        .pos-34 { top: 86%; right: 20%; transform: rotate(-15deg); max-width: 200px; }
+
+        /* Row 10 (90-100%) */
+        .pos-35 { top: 92%; left: 10%;  transform: rotate(15deg);  max-width: 240px; }
+
+        /* ==========================================================================
+           4. Layer 2: Main Journal Layout
+           ========================================================================== */
+        .journal-container {
+            position: relative;
+            z-index: 10; /* Keeps main interactive cards clickable on top of backgrounds */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .journal-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .journal-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+        }
+
+        .journal-page {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        /* Base style for all active foreground journal cards */
+        .scrap {
+            background: #ffffff;
+            padding: 15px;
+            box-shadow: 4px 6px 20px rgba(0,0,0,0.12);
+            margin: 20px;
+            position: relative;
+        }
+
+        .tilt-left {
+            transform: rotate(-3deg);
+        }
+
+        .tilt-right {
+            transform: rotate(2.5deg);
+        }
+
+        /* ==========================================================================
+           5. Custom Component Styles
+           ========================================================================== */
+        .polaroid {
+            background: #faf8f5;
+            padding: 15px 15px 35px 15px;
+            border: 1px solid #e3dec3;
+            max-width: 280px;
+        }
+
+        .polaroid img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .note-paper {
+            background: #fffef2;
+            border-left: 3px dashed #e09f67;
+            max-width: 320px;
+            padding: 25px 20px;
+        }
+
+        .tape {
+            position: absolute;
+            top: -15px;
+            left: 35%;
+            width: 90px;
+            height: 25px;
+            background-color: rgba(224, 184, 114, 0.45);
+            transform: rotate(-3deg);
+            box-shadow: 0 0 2px rgba(0,0,0,0.05);
+            border-left: 1px dashed rgba(255,255,255,0.5);
+            border-right: 1px dashed rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="journal-background-collage">
+        <img src="1.jpg" class="bg-scrap pos-1" alt="scrap 1">
+        <img src="2.jpg" class="bg-scrap pos-2" alt="scrap 2">
+        <img src="3.jpg" class="bg-scrap pos-3" alt="scrap 3">
+        <img src="4.jpg" class="bg-scrap pos-4" alt="scrap 4">
+        <img src="5.jpg" class="bg-scrap pos-5" alt="scrap 5">
+        <img src="6.jpg" class="bg-scrap pos-6" alt="scrap 6">
+        <img src="7.jpg" class="bg-scrap pos-7" alt="scrap 7">
+        <img src="8.jpg" class="bg-scrap pos-8" alt="scrap 8">
+        <img src="9.jpg" class="bg-scrap pos-9" alt="scrap 9">
+        <img src="10.jpg" class="bg-scrap pos-10" alt="scrap 10">
+        <img src="11.jpg" class="bg-scrap pos-11" alt="scrap 11">
+        <img src="12.jpg" class="bg-scrap pos-12" alt="scrap 12">
+        <img src="13.jpg" class="bg-scrap pos-13" alt="scrap 13">
+        <img src="14.jpg" class="bg-scrap pos-14" alt="scrap 14">
+        <img src="15.jpg" class="bg-scrap pos-15" alt="scrap 15">
+        <img src="16.jpg" class="bg-scrap pos-16" alt="scrap 16">
+        <img src="17.jpg" class="bg-scrap pos-17" alt="scrap 17">
+        <img src="18.jpg" class="bg-scrap pos-18" alt="scrap 18">
+        <img src="19.jpg" class="bg-scrap pos-19" alt="scrap 19">
+        <img src="20.jpg" class="bg-scrap pos-20" alt="scrap 20">
+        <img src="21.jpg" class="bg-scrap pos-21" alt="scrap 21">
+        <img src="22.jpg" class="bg-scrap pos-22" alt="scrap 22">
+        <img src="23.jpg" class="bg-scrap pos-23" alt="scrap 23">
+        <img src="24.jpg" class="bg-scrap pos-24" alt="scrap 24">
+        <img src="25.jpg" class="bg-scrap pos-25" alt="scrap 25">
+        <img src="26.jpg" class="bg-scrap pos-26" alt="scrap 26">
+        <img src="27.jpg" class="bg-scrap pos-27" alt="scrap 27">
+        <img src="28.jpg" class="bg-scrap pos-28" alt="scrap 28">
+        <img src="29.jpg" class="bg-scrap pos-29" alt="scrap 29">
+        <img src="30.jpg" class="bg-scrap pos-30" alt="scrap 30">
+        <img src="31.jpg" class="bg-scrap pos-31" alt="scrap 31">
+        <img src="32.jpg" class="bg-scrap pos-32" alt="scrap 32">
+        <img src="33.jpg" class="bg-scrap pos-33" alt="scrap 33">
+        <img src="34.jpg" class="bg-scrap pos-34" alt="scrap 34">
+        <img src="35.jpg" class="bg-scrap pos-35" alt="scrap 35">
+    </div>
+
+    <div class="journal-container">
+        
+        <header class="journal-header">
+            <h1 class="script-font">For the Birthday Girl</h1>
+            <p class="typewriter-font">Volume 2026 • A Collection of Moments</p>
+        </header>
+
+        <!-- Chapter 1 -->
+        <section class="journal-page">
+            <div class="scrap polaroid tilt-left">
+                <img src="2.jpg" alt="Birthday Memory">
+                <p class="caption script-font">Summer '25, completely lost in the city.</p>
+            </div>
+
+            <div class="scrap note-paper tilt-right">
+                <span class="tape"></span>
+                <h3 class="typewriter-font">The First Chapter</h3>
+                <p class="typewriter-font">Remember when we tried to bake that cake and forgot the baking powder? Here's to another year of beautiful disasters, brilliant adventures, and infinite inside jokes.</p>
+            </div>
+        </section>
+
+        <!-- Chapter 2 -->
+        <section class="journal-page">
+            <div class="scrap note-paper tilt-left">
+                <span class="tape" style="background-color: rgba(224, 140, 114, 0.45);"></span>
+                <h3 class="typewriter-font">The Second Chapter</h3>
+                <p class="typewriter-font">Late night drives with zero destination, blasting music windows down. Those random, quiet midnight talks are where our best plans were made. May this year bring even wilder detours.</p>
+            </div>
+            <div class="scrap polaroid tilt-right">
+                <img src="https://via.placeholder.com/250x300/e3dec3/333333?text=Midnight+Drives" alt="Chapter 2 Memory">
+                <p class="caption script-font">3 AM somewhere on the highway.</p>
+            </div>
+        </section>
+
+        <!-- Chapter 3 -->
+        <section class="journal-page">
+            <div class="scrap polaroid tilt-left">
+                <img src="https://via.placeholder.com/250x300/dccdb4/333333?text=The+Coffee+Run" alt="Chapter 3 Memory">
+                <p class="caption script-font">Caffeine fixes & long conversations.</p>
+            </div>
+            <div class="scrap note-paper tilt-right">
+                <span class="tape" style="background-color: rgba(184, 214, 224, 0.5);"></span>
+                <h3 class="typewriter-font">The Third Chapter</h3>
+                <p class="typewriter-font">An endless series of 'just one quick coffee' runs that magically turned into three-hour deep dives into the universe. Thanks for always enabling my caffeine addiction and listening to my rants.</p>
+            </div>
+        </section>
+
+        <!-- Chapter 4 -->
+        <section class="journal-page">
+            <div class="scrap note-paper tilt-left">
+                <span class="tape" style="background-color: rgba(140, 224, 114, 0.35);"></span>
+                <h3 class="typewriter-font">The Fourth Chapter</h3>
+                <p class="typewriter-font">The unwritten rules, the looks across a crowded room where we know exactly what the other is thinking, and the absolute fits of laughter over absolutely nothing. Cheers to keeping life wonderfully un-serious.</p>
+            </div>
+            <div class="scrap polaroid tilt-right">
+                <img src="https://via.placeholder.com/250x300/dfd5c6/333333?text=Laughing+Out+Loud" alt="Chapter 4 Memory">
+                <p class="caption script-font">The exact moment the camera went off.</p>
+            </div>
+        </section>
+
+        <!-- Chapter 5 -->
+        <section class="journal-page">
+            <div class="scrap polaroid tilt-left">
+                <img src="https://via.placeholder.com/250x300/cbd3c1/333333?text=Celebrating+You" alt="Chapter 5 Memory">
+                <p class="caption script-font">Making every single goal look effortless.</p>
+            </div>
+            <div class="scrap note-paper tilt-right">
+                <span class="tape" style="background-color: rgba(225, 210, 130, 0.5);"></span>
+                <h3 class="typewriter-font">The Fifth Chapter</h3>
+                <p class="typewriter-font">Through every plot twist, awkward phase, and big leap of faith, you've handled it all with unparalleled grace (and a healthy dose of sarcasm). Watching you crush your goals is my favorite sport.</p>
+            </div>
+        </section>
+
+        <!-- Chapter 6 -->
+        <section class="journal-page">
+            <div class="scrap note-paper tilt-left">
+                <span class="tape" style="background-color: rgba(190, 150, 220, 0.45);"></span>
+                <h3 class="typewriter-font">The Sixth Chapter</h3>
+                <p class="typewriter-font">This is the blank page waiting for everything we haven't done yet. More concerts, more bad cooking experiments, and more memories. Happy Birthday to someone who makes the world infinitely brighter!</p>
+            </div>
+            <div class="scrap polaroid tilt-right">
+                <img src="https://via.placeholder.com/250x300/e6ded1/333333?text=The+Next+Adventure" alt="Chapter 6 Memory">
+                <p class="caption script-font">To be continued...</p>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
